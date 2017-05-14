@@ -65,7 +65,7 @@ describe('TESTS', () => {
       });
     });
 
-    test('should return invalid salt', (done) => {
+    test('should return invalid hash', (done) => {
       const storage = 'KyHLAVL8MHOTLTT/FgqXB+OQF7LxC6jOdXXyHSEPehY=:hash';
 
       lib.verifyPassword('secret', storage, (err, success) => {
