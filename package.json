@@ -13,7 +13,7 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "coverage": "jest --colors --coverage",
+    "coverage": "jest --colors --coverage && cat ./coverage/lcov.info | coveralls",
     "dev": "nodemon sample/sample.js",
     "lint": "eslint src/**/*.js test/**/*.js",
     "test": "jest --colors",
@@ -29,6 +29,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "19.2.3",
+    "coveralls": "2.13.1",
     "eslint": "3.19.0",
     "jest": "20.0.1",
     "nodemon": "1.11.0"
