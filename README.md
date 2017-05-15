@@ -5,6 +5,7 @@
 [![Travis Status][travis-badge]][travis-badge-url]
 [![AppVeyor Status][appveyor-badge]][appveyor-badge-url]
 [![CircleCI Status][circleci-badge]][circleci-badge-url]
+[![Coveralls Status][coveralls-badge]][coveralls-badge-url]
 [![License][license-badge]][license-badge-url]
 
 ## Author
@@ -21,6 +22,9 @@
 
 [circleci-badge]: https://circleci.com/gh/robertoachar/node-password-storage.svg?style=svg
 [circleci-badge-url]: https://circleci.com/gh/robertoachar/node-password-storage
+
+[coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-password-storage/badge.svg?branch=coveralls
+[coveralls-badge-url]: https://coveralls.io/github/robertoachar/node-password-storage?branch=coveralls
 
 [license-badge]: https://img.shields.io/badge/license-MIT%20License-brightgreen.svg
 [license-badge-url]: https://opensource.org/licenses/MIT
