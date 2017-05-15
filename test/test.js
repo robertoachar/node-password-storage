@@ -5,7 +5,7 @@ describe('TESTS', () => {
   describe('Generate', () => {
 
     test('should return a storage', (done) => {
-      lib.generatePassword('secret', (err, storage) => {
+      lib.generateStorage('secret', (err, storage) => {
         if (err) return done(err);
 
         const params = storage.split(':');
@@ -16,7 +16,7 @@ describe('TESTS', () => {
     });
 
     test('should generate a salt', (done) => {
-      lib.generatePassword('secret', (err, storage) => {
+      lib.generateStorage('secret', (err, storage) => {
         if (err) return done(err);
 
         const params = storage.split(':');
@@ -28,7 +28,7 @@ describe('TESTS', () => {
     });
 
     test('should generate a hash', (done) => {
-      lib.generatePassword('secret', (err, storage) => {
+      lib.generateStorage('secret', (err, storage) => {
         if (err) return done(err);
 
         const params = storage.split(':');
@@ -46,7 +46,7 @@ describe('TESTS', () => {
     test('should return invalid parameters', (done) => {
       const storage = '';
 
-      lib.verifyPassword('secret', storage, (err, success) => {
+      lib.verifyStorage('secret', storage, (err, success) => {
         expect(err).toBe('Paremeters length is invalid');
         expect(success).toBe(undefined);
 
@@ -57,7 +57,7 @@ describe('TESTS', () => {
     test('should return invalid salt', (done) => {
       const storage = 'salt:hash';
 
-      lib.verifyPassword('secret', storage, (err, success) => {
+      lib.verifyStorage('secret', storage, (err, success) => {
         expect(err).toBe('Salt is invalid');
         expect(success).toBe(undefined);
 
@@ -68,7 +68,7 @@ describe('TESTS', () => {
     test('should return invalid hash', (done) => {
       const storage = 'KyHLAVL8MHOTLTT/FgqXB+OQF7LxC6jOdXXyHSEPehY=:hash';
 
-      lib.verifyPassword('secret', storage, (err, success) => {
+      lib.verifyStorage('secret', storage, (err, success) => {
         expect(err).toBe('Hash is invalid');
         expect(success).toBe(undefined);
 
@@ -79,7 +79,7 @@ describe('TESTS', () => {
     test('should not match', (done) => {
       const storage = 'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=';
 
-      lib.verifyPassword('secret', storage, (err, success) => {
+      lib.verifyStorage('secret', storage, (err, success) => {
         expect(err).toBe('Passwords not match');
         expect(success).toBe(undefined);
 
@@ -90,7 +90,7 @@ describe('TESTS', () => {
     test('should match', (done) => {
       const storage = 'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:J6fMDmoEmpRDHifaQsjXQWJPY0Np0lIk04XrFjbyd+s=';
 
-      lib.verifyPassword('secret', storage, (err, success) => {
+      lib.verifyStorage('secret', storage, (err, success) => {
         expect(err).toBe(null);
         expect(success).toBe(true);
 

@@ -12,13 +12,29 @@ const INDEX = 2;
 const SALT_INDEX = 0;
 const HASH_INDEX = 1;
 
-module.exports.generatePassword = (password, done) => {
-  // Generate a salt
+module.exports.generateSalt = (done) => {
   crypto.randomBytes(SALT_SIZE, (err, salt) => {
     if (err) return done(err);
 
+    done(null, salt);
+  });
+};
+
+module.exports.generateHash = (password, salt, done) => {
+  crypto.pbkdf2(password, salt, ITERATIONS, HASH_SIZE, ALGORITHM, (err, hash) => {
+    if (err) return done(err);
+
+    return done(null, hash);
+  });
+};
+
+module.exports.generateStorage = (password, done) => {
+  // Generate a salt
+  this.generateSalt((err, salt) => {
+    if (err) return done(err);
+
     // Hash password
-    crypto.pbkdf2(password, salt, ITERATIONS, HASH_SIZE, ALGORITHM, (err, hash) => {
+    this.generateHash(password, salt, (err, hash) => {
       if (err) return done(err);
 
       // Encode both salt and hash
@@ -34,7 +50,7 @@ module.exports.generatePassword = (password, done) => {
   });
 };
 
-module.exports.verifyPassword = (password, storage, done) => {
+module.exports.verifyStorage = (password, storage, done) => {
   // Load parameters
   const params = storage.split(':');
 
@@ -56,11 +72,11 @@ module.exports.verifyPassword = (password, storage, done) => {
   }
 
   // Compare passwords
-  crypto.pbkdf2(password, salt, ITERATIONS, HASH_SIZE, ALGORITHM, (err, key) => {
+  this.generateHash(password, salt, (err, key) => {
     if (err) return done(err);
 
     // Slow compare
-    if (!slowEquals(hash, key)) {
+    if (!this.slowEquals(hash, key)) {
       return done('Passwords not match');
     }
 
@@ -69,9 +85,9 @@ module.exports.verifyPassword = (password, storage, done) => {
   });
 };
 
-function slowEquals(a, b) {
+module.exports.slowEquals = (a, b) => {
   let diff = a.length ^ b.length;
   for (let i = 0; i < a.length && i < b.length; i++)
     diff |= a[i] ^ b[i];
   return diff === 0;
-}
+};

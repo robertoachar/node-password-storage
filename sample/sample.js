@@ -2,17 +2,17 @@
 
 const lib = require('../src/index');
 
-const password = 'secret';
+const password = undefined;
 
-lib.generatePassword(password, (err, hash) => {
+lib.generateStorage(password, (err, storage) => {
   if (err) return console.error(err.message);
 
-  const params = hash.split(':');
+  const params = storage.split(':');
   console.log(`SALT => ${params[0]}`);
   console.log(`HASH => ${params[1]}`);
   console.log();
 
-  lib.verifyPassword(password, hash, (err, success) => {
+  lib.verifyStorage(password, storage, (err, success) => {
     if (err) return console.error(err);
 
     console.log(`Passwords match: ${success}`);
