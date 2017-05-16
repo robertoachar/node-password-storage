@@ -13,7 +13,7 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "coveralls": "jest --colors --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "coverage": "jest --colors --coverage",
     "dev": "nodemon sample/sample.js",
     "lint": "eslint src/**/*.js test/**/*.js",
