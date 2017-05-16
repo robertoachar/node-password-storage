@@ -13,19 +13,23 @@ const SALT_INDEX = 0;
 const HASH_INDEX = 1;
 
 module.exports.generateSalt = (size, done) => {
-  crypto.randomBytes(size, (err, salt) => {
-    if (err) return done(err);
-
-    done(null, salt);
-  });
+  try {
+    crypto.randomBytes(size, (err, salt) => {
+      done(null, salt);
+    });
+  } catch (error) {
+    done(error);
+  }
 };
 
 module.exports.generateHash = (password, salt, done) => {
-  crypto.pbkdf2(password, salt, ITERATIONS, HASH_SIZE, ALGORITHM, (err, hash) => {
-    if (err) return done(err);
-
-    return done(null, hash);
-  });
+  try {
+    crypto.pbkdf2(password, salt, ITERATIONS, HASH_SIZE, ALGORITHM, (err, hash) => {
+      return done(null, hash);
+    });
+  } catch (error) {
+    done(error);
+  }
 };
 
 module.exports.generateStorage = (password, done) => {

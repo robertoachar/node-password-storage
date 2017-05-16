@@ -40,4 +40,13 @@ describe('STORAGE tests', () => {
     });
   });
 
+  test('should return an error', (done) => {
+    lib.generateStorage(undefined, (err, storage) => {
+      expect(err).toBeDefined();
+      expect(storage).toBeUndefined();
+
+      done();
+    });
+  });
+
 });

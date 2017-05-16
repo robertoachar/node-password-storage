@@ -57,4 +57,15 @@ describe('VERIFY tests', () => {
     });
   });
 
+  test('should return an error', (done) => {
+    const storage = 'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:J6fMDmoEmpRDHifaQsjXQWJPY0Np0lIk04XrFjbyd+s=';
+
+    lib.verifyStorage(undefined, storage, (err, success) => {
+      expect(err).toBeDefined();
+      expect(success).toBeUndefined();
+
+      done();
+    });
+  });
+
 });
