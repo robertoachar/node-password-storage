@@ -2,19 +2,28 @@
 
 const lib = require('../src/index');
 
-const password = 'secret';
+lib.generateSalt(32, (err, salt) => {
+  if (err) return console.error(err);
 
-lib.generatePassword(password, (err, hash) => {
+  console.log(`SALT: ${salt.toString('hex')}\n`);
+});
+
+lib.generateHash('password', 'salt', (err, hash) => {
+  if (err) return console.error(err);
+
+  console.log(`HASH: ${hash.toString('hex')}\n`);
+});
+
+lib.generateStorage('password', (err, storage) => {
   if (err) return console.error(err.message);
 
-  const params = hash.split(':');
+  const params = storage.split(':');
   console.log(`SALT => ${params[0]}`);
   console.log(`HASH => ${params[1]}`);
-  console.log();
 
-  lib.verifyPassword(password, hash, (err, success) => {
+  lib.verifyStorage('password', storage, (err, success) => {
     if (err) return console.error(err);
 
-    console.log(`Passwords match: ${success}`);
+    console.log(`MATCH: ${success}`);
   });
 });
