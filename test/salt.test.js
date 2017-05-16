@@ -13,7 +13,7 @@ describe('SALT tests', () => {
 
   test('should return an error', (done) => {
     lib.generateSalt(undefined, (err, salt) => {
-      expect(err).toBeTruthy();
+      expect(err).toBeDefined();
       expect(salt).toBeUndefined();
 
       done();
