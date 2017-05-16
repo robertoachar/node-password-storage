@@ -91,7 +91,8 @@ module.exports.verifyStorage = (password, storage, done) => {
 
 module.exports.slowEquals = (a, b) => {
   let diff = a.length ^ b.length;
-  for (let i = 0; i < a.length && i < b.length; i++)
+  for (let i = 0; i < a.length && i < b.length; i++) {
     diff |= a[i] ^ b[i];
+  }
   return diff === 0;
 };
