@@ -12,8 +12,8 @@ const INDEX = 2;
 const SALT_INDEX = 0;
 const HASH_INDEX = 1;
 
-module.exports.generateSalt = (done) => {
-  crypto.randomBytes(SALT_SIZE, (err, salt) => {
+module.exports.generateSalt = (size, done) => {
+  crypto.randomBytes(size, (err, salt) => {
     if (err) return done(err);
 
     done(null, salt);
@@ -30,7 +30,7 @@ module.exports.generateHash = (password, salt, done) => {
 
 module.exports.generateStorage = (password, done) => {
   // Generate a salt
-  this.generateSalt((err, salt) => {
+  this.generateSalt(SALT_SIZE, (err, salt) => {
     if (err) return done(err);
 
     // Hash password
