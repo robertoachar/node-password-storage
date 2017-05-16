@@ -16,6 +16,7 @@ describe('HASH tests', () => {
     expect(() => {
       lib.generateHash(undefined, undefined);
     }).toThrow();
+
     done();
   });
 

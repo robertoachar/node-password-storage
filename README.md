@@ -23,8 +23,8 @@
 [circleci-badge]: https://circleci.com/gh/robertoachar/node-password-storage.svg?style=svg
 [circleci-badge-url]: https://circleci.com/gh/robertoachar/node-password-storage
 
-[coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-password-storage/badge.svg?branch=coveralls
-[coveralls-badge-url]: https://coveralls.io/github/robertoachar/node-password-storage?branch=coveralls
+[coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-password-storage/badge.svg?branch=master
+[coveralls-badge-url]: https://coveralls.io/github/robertoachar/node-password-storage?branch=master
 
 [license-badge]: https://img.shields.io/badge/license-MIT%20License-brightgreen.svg
 [license-badge-url]: https://opensource.org/licenses/MIT
