@@ -12,6 +12,9 @@
     "hash"
   ],
   "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "coverage": "jest --colors --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
