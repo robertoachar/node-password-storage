@@ -8,6 +8,95 @@
 [![Coveralls Status][coveralls-badge]][coveralls-url]
 [![License][license-badge]][license-url]
 
+## Installation
+
+### Prerequsites
+
+* Install [Node.js](https://nodejs.org)
+* Install [npm](https://www.npmjs.com/)
+
+Install package:
+
+```bash
+$ npm install --save node-password-storage
+```
+
+## Usage
+
+Generate a salt
+
+```javascript
+const lib = require('../src/index');
+
+const salt_size = 32;
+
+lib.generateSalt(salt_size, (err, salt) => {
+  if (err) return console.error(err);
+
+  console.log(`SALT: ${salt.toString('hex')}\n`);
+});
+```
+
+Generate a hash
+
+```javascript
+const lib = require('../src/index');
+
+const password = 'password';
+const salt = 'salt';
+
+lib.generateHash(password, salt, (err, hash) => {
+  if (err) return console.error(err);
+
+  console.log(`HASH: ${hash.toString('hex')}\n`);
+});
+```
+
+To generate and compare a storage
+
+```javascript
+const lib = require('../src/index');
+
+const password = 'password';
+
+lib.generateStorage(password, (err, storage) => {
+  if (err) return console.error(err.message);
+
+  const params = storage.split(':');
+  console.log(`SALT => ${params[0]}`);
+  console.log(`HASH => ${params[1]}`);
+
+  lib.verifyStorage(password, storage, (err, success) => {
+    if (err) return console.error(err);
+
+    console.log(`MATCH: ${success}`);
+  });
+});
+```
+
+## Development
+
+* Clone the repo
+
+```bash
+$ git clone https://github.com/robertoachar/node-password-storage.git
+```
+
+* Install dependencies
+
+```bash
+$ npm install
+```
+
+Action | Usage
+---    | ---
+Starting development mode                | `npm start`
+Linting code                             | `npm run lint`
+Running unit tests                       | `npm run jest`
+Running code coverage                    | `npm run coverage`
+Running lint + tests                     | `npm test`
+Sending coverage results to Coveralls.io | `npm run coveralls`
+
 ## Author
 [Roberto Achar](https://twitter.com/RobertoAchar)
 
