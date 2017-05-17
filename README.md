@@ -6,6 +6,7 @@
 [![AppVeyor Status][appveyor-badge]][appveyor-url]
 [![CircleCI Status][circleci-badge]][circleci-url]
 [![Coveralls Status][coveralls-badge]][coveralls-url]
+[![NPM Version][npm-badge]][npm-url]
 [![License][license-badge]][license-url]
 
 ## Installation
@@ -114,6 +115,9 @@ Sending coverage results to Coveralls.io | `npm run coveralls`
 
 [coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-password-storage/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/robertoachar/node-password-storage?branch=master
+
+[npm-badge]: https://img.shields.io/npm/v/node-password-storage.svg
+[npm-url]: https://www.npmjs.com/package/node-password-storage
 
 [license-badge]: https://img.shields.io/badge/license-MIT%20License-brightgreen.svg
 [license-url]: https://opensource.org/licenses/MIT
