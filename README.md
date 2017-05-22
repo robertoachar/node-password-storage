@@ -27,7 +27,7 @@ $ npm install --save node-password-storage
 Generate a salt
 
 ```javascript
-const lib = require('../src/index');
+const lib = require('node-password-storage');
 
 const salt_size = 32;
 
@@ -41,7 +41,7 @@ lib.generateSalt(salt_size, (err, salt) => {
 Generate a hash
 
 ```javascript
-const lib = require('../src/index');
+const lib = require('node-password-storage');
 
 const password = 'password';
 const salt = 'salt';
@@ -56,7 +56,7 @@ lib.generateHash(password, salt, (err, hash) => {
 To generate and compare a storage
 
 ```javascript
-const lib = require('../src/index');
+const lib = require('node-password-storage');
 
 const password = 'password';
 
@@ -107,10 +107,10 @@ Sending coverage results to Coveralls.io | `npm run coveralls`
 [travis-badge]: https://travis-ci.org/robertoachar/node-password-storage.svg?branch=master
 [travis-url]: https://travis-ci.org/robertoachar/node-password-storage
 
-[appveyor-badge]: https://ci.appveyor.com/api/projects/status/tkw96ql32rabuibh?svg=true
+[appveyor-badge]: https://ci.appveyor.com/api/projects/status/github/robertoachar/node-password-storage?branch=master&svg=true
 [appveyor-url]: https://ci.appveyor.com/project/robertoachar/node-password-storage
 
-[circleci-badge]: https://circleci.com/gh/robertoachar/node-password-storage.svg?style=svg
+[circleci-badge]: https://circleci.com/gh/robertoachar/node-password-storage/tree/master.svg?style=shield
 [circleci-url]: https://circleci.com/gh/robertoachar/node-password-storage
 
 [coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-password-storage/badge.svg?branch=master
@@ -119,5 +119,5 @@ Sending coverage results to Coveralls.io | `npm run coveralls`
 [npm-badge]: https://img.shields.io/npm/v/node-password-storage.svg
 [npm-url]: https://www.npmjs.com/package/node-password-storage
 
-[license-badge]: https://img.shields.io/badge/license-MIT%20License-brightgreen.svg
+[license-badge]: https://img.shields.io/github/license/robertoachar/node-password-storage.svg
 [license-url]: https://opensource.org/licenses/MIT
