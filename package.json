@@ -1,6 +1,6 @@
 {
   "name": "node-password-storage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The best way to protect passwords is to employ salted password hashing.",
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "homepage": "https://github.com/robertoachar/node-password-storage#readme",
