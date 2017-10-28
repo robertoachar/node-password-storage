@@ -5,8 +5,7 @@
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "homepage": "https://github.com/robertoachar/node-password-storage#readme",
   "keywords": [
-    "node-js",
-    "jest",
+    "node",
     "salt",
     "password",
     "hash"
@@ -32,11 +31,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "19.2.3",
-    "coveralls": "2.13.1",
-    "eslint": "3.19.0",
-    "jest": "20.0.3",
-    "nodemon": "1.11.0"
+    "@types/jest": "21.1.5",
+    "coveralls": "3.0.0",
+    "eslint": "4.10.0",
+    "jest": "21.2.1",
+    "nodemon": "1.12.1"
   },
   "license": "MIT"
 }
