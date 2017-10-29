@@ -1,9 +1,11 @@
 machine:
   node:
-    version: 6.10.3
+    version: 6.11.5
+
 dependencies:
   override:
     - npm install
+
 test:
   override:
     - npm test

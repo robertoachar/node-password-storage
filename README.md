@@ -101,9 +101,11 @@ Running lint + tests                     | `npm test`
 Sending coverage results to Coveralls.io | `npm run coveralls`
 
 # Author
+
 [Roberto Achar](https://twitter.com/RobertoAchar)
 
 # License
+
 [MIT](https://github.com/robertoachar/node-password-storage/blob/master/LICENSE)
 
 [travis-badge]: https://travis-ci.org/robertoachar/node-password-storage.svg?branch=master
