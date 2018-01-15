@@ -1,7 +1,6 @@
 const lib = require('../src/index');
 
 describe('STORAGE tests', () => {
-
   test('should return a storage', (done) => {
     lib.generateStorage('secret', (err, storage) => {
       if (err) return done(err);
@@ -48,5 +47,4 @@ describe('STORAGE tests', () => {
       done();
     });
   });
-
 });

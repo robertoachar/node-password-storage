@@ -1,7 +1,6 @@
 const lib = require('../src/index');
 
 describe('VERIFY tests', () => {
-
   test('should return invalid parameters', (done) => {
     const storage = '';
 
@@ -36,7 +35,8 @@ describe('VERIFY tests', () => {
   });
 
   test('should not match', (done) => {
-    const storage = 'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=';
+    const storage =
+      'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=';
 
     lib.verifyStorage('secret', storage, (err, success) => {
       expect(err).toBe('Passwords not match');
@@ -47,7 +47,8 @@ describe('VERIFY tests', () => {
   });
 
   test('should match', (done) => {
-    const storage = 'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:J6fMDmoEmpRDHifaQsjXQWJPY0Np0lIk04XrFjbyd+s=';
+    const storage =
+      'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:J6fMDmoEmpRDHifaQsjXQWJPY0Np0lIk04XrFjbyd+s=';
 
     lib.verifyStorage('secret', storage, (err, success) => {
       expect(err).toBe(null);
@@ -58,7 +59,8 @@ describe('VERIFY tests', () => {
   });
 
   test('should return an error', (done) => {
-    const storage = 'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:J6fMDmoEmpRDHifaQsjXQWJPY0Np0lIk04XrFjbyd+s=';
+    const storage =
+      'CoYyMqXHRHjXEtTbggtEhXjM1jETlVn0sLsv/TiUGhY=:J6fMDmoEmpRDHifaQsjXQWJPY0Np0lIk04XrFjbyd+s=';
 
     lib.verifyStorage(undefined, storage, (err, success) => {
       expect(err).toBeDefined();
@@ -67,5 +69,4 @@ describe('VERIFY tests', () => {
       done();
     });
   });
-
 });

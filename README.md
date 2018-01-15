@@ -91,14 +91,14 @@ $ git clone https://github.com/robertoachar/node-password-storage.git
 $ npm install
 ```
 
-Action | Usage
----    | ---
-Starting development mode                | `npm start`
-Linting code                             | `npm run lint`
-Running unit tests                       | `npm run jest`
-Running code coverage                    | `npm run coverage`
-Running lint + tests                     | `npm test`
-Sending coverage results to Coveralls.io | `npm run coveralls`
+| Action                                   | Usage               |
+| ---------------------------------------- | ------------------- |
+| Starting development mode                | `npm start`         |
+| Linting code                             | `npm run lint`      |
+| Running unit tests                       | `npm run jest`      |
+| Running code coverage                    | `npm run coverage`  |
+| Running lint + tests                     | `npm test`          |
+| Sending coverage results to Coveralls.io | `npm run coveralls` |
 
 # Author
 
@@ -110,18 +110,13 @@ Sending coverage results to Coveralls.io | `npm run coveralls`
 
 [travis-badge]: https://travis-ci.org/robertoachar/node-password-storage.svg?branch=master
 [travis-url]: https://travis-ci.org/robertoachar/node-password-storage
-
 [appveyor-badge]: https://ci.appveyor.com/api/projects/status/github/robertoachar/node-password-storage?branch=master&svg=true
 [appveyor-url]: https://ci.appveyor.com/project/robertoachar/node-password-storage
-
 [circleci-badge]: https://circleci.com/gh/robertoachar/node-password-storage/tree/master.svg?style=shield
 [circleci-url]: https://circleci.com/gh/robertoachar/node-password-storage
-
 [coveralls-badge]: https://coveralls.io/repos/github/robertoachar/node-password-storage/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/robertoachar/node-password-storage?branch=master
-
 [npm-badge]: https://img.shields.io/npm/v/node-password-storage.svg
 [npm-url]: https://www.npmjs.com/package/node-password-storage
-
 [license-badge]: https://img.shields.io/github/license/robertoachar/node-password-storage.svg
 [license-url]: https://opensource.org/licenses/MIT

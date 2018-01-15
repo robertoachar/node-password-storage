@@ -1,6 +1,6 @@
 {
   "name": "node-password-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The best way to protect passwords is to employ salted password hashing.",
   "author": "Roberto Achar <robertoachar@gmail.com>",
   "homepage": "https://github.com/robertoachar/node-password-storage#readme",
@@ -18,7 +18,7 @@
     "coverage": "jest --colors --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "jest": "jest --colors --verbose",
-    "lint": "eslint src/**/*.js test/**/*.js",
+    "lint": "eslint src/**/*.js test/**/*.js __mocks__/**/*.js sample/**/*.js --fix",
     "start": "nodemon sample/sample.js",
     "test": "npm run lint && npm run jest"
   },
@@ -31,11 +31,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "21.1.5",
+    "@types/jest": "22.0.1",
     "coveralls": "3.0.0",
-    "eslint": "4.10.0",
-    "jest": "21.2.1",
-    "nodemon": "1.12.1"
+    "eslint": "4.15.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.4.0",
+    "jest": "22.0.6",
+    "nodemon": "1.14.11",
+    "prettier": "1.10.2"
   },
   "license": "MIT"
 }
