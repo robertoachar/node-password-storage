@@ -24,9 +24,16 @@ module.exports.generateSalt = (size, done) => {
 
 module.exports.generateHash = (password, salt, done) => {
   try {
-    crypto.pbkdf2(password, salt, ITERATIONS, HASH_SIZE, ALGORITHM, (err, hash) => {
-      return done(null, hash);
-    });
+    crypto.pbkdf2(
+      password,
+      salt,
+      ITERATIONS,
+      HASH_SIZE,
+      ALGORITHM,
+      (err, hash) => {
+        return done(null, hash);
+      }
+    );
   } catch (error) {
     done(error);
   }

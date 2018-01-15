@@ -1,5 +1,3 @@
-/* eslint no-console: 0 */
-
 const lib = require('../src/index');
 
 lib.generateSalt(32, (err, salt) => {

@@ -1,7 +1,6 @@
 const lib = require('../src/index');
 
 describe('SALT tests', () => {
-
   test('should return a salt', (done) => {
     lib.generateSalt(32, (err, salt) => {
       expect(err).toBeNull();
@@ -27,5 +26,4 @@ describe('SALT tests', () => {
 
     done();
   });
-
 });
